@@ -30,6 +30,6 @@ jobs:
       - torque/end-sandbox:
           sandbox-id: SANDBOX_ID
 workflows:
-  leadeasy:
+  testpromotionmanager:
     jobs:
       - test
