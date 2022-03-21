@@ -1,21 +1,23 @@
 kind: application
 inputs:
 - PORT: 3000
-- API_PORT: 30001
+- API_PORT: 3001
 - AZURE_VM_SIZE: Basic_A1
 - AWS_INSTANCE_TYPE: m5.large
+- API_DNS: ''
+
 infrastructure:
   connectivity:
     external:
     - web:
         port: $PORT
-        path: ''
   compute:
     spec:      
       azure:
         vm_size: $AZURE_VM_SIZE
       aws:
         instance_type: $AWS_INSTANCE_TYPE
+
 configuration:
   start:
     script: promotions-manager-ui-command.sh
@@ -34,7 +36,7 @@ source:
       tag: 16.04
     ami:
       - id: ami-08660f1c6fb6b01e7
-        region: eu-west-1
+        region: us-east-2
         username: ubuntu
       - id: ami-0565af6e282977273
         region: us-east-1
