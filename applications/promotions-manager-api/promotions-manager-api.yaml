@@ -6,6 +6,7 @@ inputs:
 - DATABASE_HOST: mongodb
 - RELEASE_NUMBER: none
 - API_BUILD_NUMBER: none
+- RDS: "false"
 
 infrastructure:
   connectivity:
@@ -16,7 +17,7 @@ infrastructure:
     spec:      
       azure:
         vm_size: $AZURE_VM_SIZE
-    aws:
+      aws:
         instance_type: $AWS_INSTANCE_TYPE
 configuration:
   start:
