@@ -10,7 +10,7 @@ jobs:
     steps:
       - torque/start-sandbox:
           sandbox-name: "circleci-test"
-          blueprint: "promotions-manager-all-aws-dev.yaml"
+          blueprint: "promotions-manager-all-aws-dev"
           inputs: "{'AWS_INSTANCE_TYPE': 'm5.large'}"
           artifacts: "{'promotions-manager-ui':'artifacts/latest/promotions-manager-ui.master.tar.gz','promotions-manager-api':'artifacts/latest/promotions-manager-api.master.tar.gz', 'mongodb': 'artifacts/test-data/test-data-db.tar' }"
       - run:
