@@ -1,6 +1,9 @@
 spec_version: 1
 kind: blueprint
 description: Deploy a Windows VM and provision a storage using NetApp Ontap
+clouds: 
+  - AWS-Dev: us-east-1
+  
 grains:
   WindowsVM:
     kind: terraform
