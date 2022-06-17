@@ -1,4 +1,5 @@
-spec_version: 2-preview
+spec_version: 1
+kind: blueprint
 description: Deploy a Windows VM and provision a storage using NetApp Ontap
 grains:
   WindowsVM:
