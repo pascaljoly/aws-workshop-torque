@@ -1,0 +1,23 @@
+spec_version: 2-preview
+description: Deploy a Windows VM and provision a storage using NetApp Ontap
+grains:
+  WindowsVM:
+    kind: terraform
+    spec:
+      source:
+        path: git::https://github.com/QualiTorque/samples/tree/main/terraform/windowsvm
+      host:
+        cloud-account: aws
+        compute-service: eks
+      inputs:
+        - VM_Size: t3.large
+        - AWS_Region: us-east-1
+  ProvisionStorage:
+    kind: ansible
+    depends-on: WindowsVM
+    spec:
+      source:
+        path: git::https://github.com/QualiTorque/samples/tree/main/ansible/provisionstorageontap.yaml
+      host:
+        cloud-account: aws
+        compute-service: eks
